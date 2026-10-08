@@ -1,0 +1,38 @@
+# === Ansible ===
+*.retry
+ansible/inventory/hosts.local.ini
+ansible/inventory/group_vars/all/vault.yml
+
+# === Secrets ===
+*.key
+*.pem
+.env
+.env.*
+!env.example
+secrets/
+!secrets/.gitkeep
+
+# === OS ===
+.DS_Store
+Thumbs.db
+*.swp
+*~
+
+# === IDE ===
+.vscode/
+.idea/
+*.iml
+
+# === Backups ===
+backups/
+*.restic*
+*.bak
+
+# === Logs ===
+*.log
+
+# === Python ===
+__pycache__/
+*.py[cod]
+.venv/
+venv/

@@ -1,0 +1,175 @@
+=== HOSTNAMECTL ===
+ Static hostname: ninjacloud
+       Icon name: computer-desktop
+         Chassis: desktop 🖥️
+      Machine ID: ba57475d43d1422f962eb865e4ab5b77
+         Boot ID: 719b0c553d24473abf95f5b485e514da
+Operating System: Ubuntu 26.04.1 LTS
+          Kernel: Linux 7.0.0-38-generic
+    Architecture: x86-64
+ Hardware Vendor: Intel_R_ Client Systems
+  Hardware Model: NUC7CJYH
+Hardware Version: J67971-405
+Firmware Version: JYGLKCPX.86A.0050.2019.0418.1441
+   Firmware Date: Thu 2019-04-18
+    Firmware Age: 7y 5month 3w
+
+=== LSCPU ===
+Architecture:                            x86_64
+CPU op-mode(s):                          32-bit, 64-bit
+Address sizes:                           39 bits physical, 48 bits virtual
+Byte Order:                              Little Endian
+CPU(s):                                  2
+On-line CPU(s) list:                     0,1
+Vendor ID:                               GenuineIntel
+Model name:                              Intel(R) Celeron(R) J4005 CPU @ 2.00GHz
+CPU family:                              6
+Model:                                   122
+Thread(s) per core:                      1
+Core(s) per socket:                      2
+Socket(s):                               1
+Stepping:                                1
+CPU(s) scaling MHz:                      96%
+CPU max MHz:                             2700.0000
+CPU min MHz:                             800.0000
+BogoMIPS:                                3993.60
+Flags:                                   fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf tsc_known_freq pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg cx16 xtpr pdcm sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave rdrand lahf_lm 3dnowprefetch cpuid_fault cat_l2 pti cdp_l2 ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow flexpriority ept vpid ept_ad fsgsbase tsc_adjust sgx smep erms mpx rdt_a rdseed smap clflushopt intel_pt sha_ni xsaveopt xsavec xgetbv1 xsaves dtherm ida arat pln pts vnmi umip rdpid sgx_lc md_clear arch_capabilities
+Virtualization:                          VT-x
+L1d cache:                               48 KiB (2 instances)
+L1i cache:                               64 KiB (2 instances)
+L2 cache:                                4 MiB (1 instance)
+NUMA node(s):                            1
+NUMA node0 CPU(s):                       0,1
+Vulnerability Gather data sampling:      Not affected
+Vulnerability Ghostwrite:                Not affected
+Vulnerability Indirect target selection: Not affected
+Vulnerability Itlb multihit:             Not affected
+Vulnerability L1tf:                      Not affected
+Vulnerability Mds:                       Not affected
+Vulnerability Meltdown:                  Mitigation; PTI
+Vulnerability Mmio stale data:           Not affected
+Vulnerability Old microcode:             Not affected
+Vulnerability Reg file data sampling:    Mitigation; Clear Register File
+Vulnerability Retbleed:                  Not affected
+Vulnerability Spec rstack overflow:      Not affected
+Vulnerability Spec store bypass:         Mitigation; Speculative Store Bypass disabled via prctl
+Vulnerability Spectre v1:                Mitigation; usercopy/swapgs barriers and __user pointer sanitization
+Vulnerability Spectre v2:                Mitigation; Enhanced / Automatic IBRS; IBPB conditional; PBRSB-eIBRS Not affected; BHI SW loop, KVM SW loop
+Vulnerability Srbds:                     Not affected
+Vulnerability Tsa:                       Not affected
+Vulnerability Tsx async abort:           Not affected
+Vulnerability Vmscape:                   Not affected
+
+=== FREE ===
+               total        used        free      shared  buff/cache   available
+Mem:            14Gi       556Mi        14Gi       1.6Mi       381Mi        14Gi
+Swap:          4.0Gi          0B       4.0Gi
+
+=== LSBLK ===
+NAME                      MAJ:MIN RM   SIZE RO TYPE MOUNTPOINTS
+loop0                       7:0    0  66.8M  1 loop /snap/core24/1643
+loop1                       7:1    0   1.5M  1 loop /snap/hwctl/123
+loop2                       7:2    0  50.1M  1 loop /snap/snapd/27710
+sda                         8:0    0 931.5G  0 disk 
+├─sda1                      8:1    0     1G  0 part /boot/efi
+├─sda2                      8:2    0     2G  0 part /boot
+└─sda3                      8:3    0 928.5G  0 part 
+  └─ubuntu--vg-ubuntu--lv 252:0    0   100G  0 lvm  /
+
+=== DF ===
+Filesystem                         Size  Used Avail Use% Mounted on
+tmpfs                              3.0G  1.4M  3.0G   1% /run
+/dev/mapper/ubuntu--vg-ubuntu--lv   98G  7.4G   86G   8% /
+tmpfs                              7.4G     0  7.4G   0% /dev/shm
+efivarfs                           128K  103K   21K  84% /sys/firmware/efi/efivars
+none                               1.0M     0  1.0M   0% /run/credentials/systemd-journald.service
+tmpfs                              7.4G     0  7.4G   0% /tmp
+none                               1.0M     0  1.0M   0% /run/credentials/systemd-resolved.service
+/dev/sda2                          2.0G  187M  1.7G  11% /boot
+/dev/sda1                          1.1G  6.4M  1.1G   1% /boot/efi
+none                               1.0M     0  1.0M   0% /run/credentials/systemd-networkd.service
+none                               1.0M     0  1.0M   0% /run/credentials/getty@tty1.service
+tmpfs                              1.5G  8.0K  1.5G   1% /run/user/1000
+
+=== IP ADDR ===
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host noprefixroute 
+       valid_lft forever preferred_lft forever
+2: eno1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
+    link/ether 1c:69:7a:0f:96:a1 brd ff:ff:ff:ff:ff:ff
+    altname enp2s0
+    altname enx1c697a0f96a1
+    inet NUC_IP/24 metric 100 brd 192.168.1.255 scope global dynamic eno1
+       valid_lft 21658sec preferred_lft 21658sec
+    inet6 fd70:5cef:bea9:0:1e69:7aff:fe0f:96a1/64 scope global dynamic mngtmpaddr noprefixroute 
+       valid_lft 4294512809sec preferred_lft 4294512809sec
+    inet6 fe80::1e69:7aff:fe0f:96a1/64 scope link proto kernel_ll 
+       valid_lft forever preferred_lft forever
+3: wlo2: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc noqueue state DOWN group default qlen 1000
+    link/ether 24:41:8c:b8:20:cc brd ff:ff:ff:ff:ff:ff
+    altname wlp0s12f0
+    altname wlx24418cb820cc
+
+=== IP ROUTE ===
+default via GATEWAY_IP dev eno1 proto dhcp src NUC_IP metric 100 
+192.168.1.0/24 dev eno1 proto kernel scope link src NUC_IP metric 100 
+GATEWAY_IP dev eno1 proto dhcp scope link src NUC_IP metric 100 
+
+=== SS ===
+Netid State  Recv-Q Send-Q                    Local Address:Port Peer Address:PortProcess
+udp   UNCONN 0      0                            127.0.0.54:53        0.0.0.0:*          
+udp   UNCONN 0      0                         127.0.0.53%lo:53        0.0.0.0:*          
+udp   UNCONN 0      0                     NUC_IP%eno1:68        0.0.0.0:*          
+udp   UNCONN 0      0                             127.0.0.1:323       0.0.0.0:*          
+udp   UNCONN 0      0                                 [::1]:323          [::]:*          
+udp   UNCONN 0      0      [fe80::1e69:7aff:fe0f:96a1]%eno1:546          [::]:*          
+tcp   LISTEN 0      4096                            0.0.0.0:22        0.0.0.0:*          
+tcp   LISTEN 0      4096                      127.0.0.53%lo:53        0.0.0.0:*          
+tcp   LISTEN 0      4096                         127.0.0.54:53        0.0.0.0:*          
+tcp   LISTEN 0      4096                               [::]:22           [::]:*          
+
+=== SERVICES RUNNING ===
+  UNIT                        LOAD   ACTIVE SUB     DESCRIPTION
+  chrony.service              loaded active running chrony, an NTP client/server
+  cron.service                loaded active running Regular background program processing daemon
+  dbus.service                loaded active running D-Bus System Message Bus
+  getty@tty1.service          loaded active running Getty on tty1
+  ModemManager.service        loaded active running Modem Manager
+  multipathd.service          loaded active running Device-Mapper Multipath Device Controller
+  networkd-dispatcher.service loaded active running Dispatcher daemon for systemd-networkd
+  polkit.service              loaded active running Authorization Manager
+  rsyslog.service             loaded active running System Logging Service
+  snapd.service               loaded active running Snap Daemon
+  ssh.service                 loaded active running OpenBSD Secure Shell server
+  systemd-hostnamed.service   loaded active running Hostname Service
+  systemd-journald.service    loaded active running Journal Service
+  systemd-logind.service      loaded active running User Login Management
+  systemd-networkd.service    loaded active running Network Management
+  systemd-resolved.service    loaded active running Network Name Resolution
+  systemd-udevd.service       loaded active running Rule-based Manager for Device Events and Files
+  thermald.service            loaded active running Thermal Daemon Service
+  udisks2.service             loaded active running Disk Manager
+  unattended-upgrades.service loaded active running Unattended Upgrades Shutdown
+  user@1000.service           loaded active running User Manager for UID 1000
+  wpa_supplicant.service      loaded active running WPA supplicant
+
+Legend: LOAD   → Reflects whether the unit definition was properly loaded.
+        ACTIVE → The high-level unit activation state, i.e. generalization of SUB.
+        SUB    → The low-level unit activation state, values depend on unit type.
+
+22 loaded units listed.
+
+=== UNAME ===
+Linux ninjacloud 7.0.0-38-generic #38-Ubuntu SMP PREEMPT_DYNAMIC Fri Sep  4 09:10:14 UTC 2026 x86_64 GNU/Linux
+
+=== LSB RELEASE ===
+Distributor ID:	Ubuntu
+Description:	Ubuntu 26.04.1 LTS
+Release:	26.04
+Codename:	resolute
+
+=== DOCKER VERSION ===
+(docker not installed)
