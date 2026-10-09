@@ -9,3 +9,4 @@
     - ufw
     - fail2ban
     - ssh
+    - docker

@@ -1,0 +1,36 @@
+---
+- name: Install Docker from Ubuntu repository
+  ansible.builtin.apt:
+    name:
+      - docker.io
+      - docker-compose-v2
+    state: present
+    update_cache: true
+
+- name: Configure Docker daemon
+  ansible.builtin.copy:
+    dest: /etc/docker/daemon.json
+    content: |
+      {
+        "log-driver": "json-file",
+        "log-opts": {
+          "max-size": "{{ docker_log_max_size }}",
+          "max-file": "{{ docker_log_max_file }}"
+        }
+      }
+    mode: '0644'
+  notify: restart docker
+
+- name: Add users to docker group
+  ansible.builtin.user:
+    name: "{{ item }}"
+    groups: docker
+    append: true
+  loop: "{{ docker_users }}"
+  notify: restart docker
+
+- name: Ensure Docker is running and enabled
+  ansible.builtin.systemd:
+    name: docker
+    enabled: true
+    state: started
