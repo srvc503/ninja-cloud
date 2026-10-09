@@ -1,0 +1,11 @@
+---
+common_timezone: Europe/Moscow
+common_packages:
+  - curl
+  - git
+  - vim
+  - htop
+  - python3-pip
+  - unattended-upgrades
+  - apt-listchanges
+common_ansible_user: prblm403
