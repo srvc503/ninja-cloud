@@ -1,0 +1,37 @@
+---
+- name: Check if cloud-init SSH config exists
+  ansible.builtin.stat:
+    path: /etc/ssh/sshd_config.d/50-cloud-init.conf
+  register: ssh_cloud_init
+
+- name: Remove cloud-init SSH config (overrides our hardening)
+  ansible.builtin.file:
+    path: /etc/ssh/sshd_config.d/50-cloud-init.conf
+    state: absent
+  when: ssh_cloud_init.stat.exists
+  notify: restart ssh
+
+- name: Disable cloud-init from managing SSH config
+  ansible.builtin.copy:
+    dest: /etc/cloud/cloud.cfg.d/99-disable-ssh-pwauth.cfg
+    content: |
+      # NinjaCloud: prevent cloud-init from managing SSH password auth
+      ssh_pwauth: false
+    mode: '0644'
+  notify: restart ssh
+
+- name: Deploy SSH hardening config
+  ansible.builtin.template:
+    src: sshd_config.d/99-ninjacloud.conf.j2
+    dest: /etc/ssh/sshd_config.d/99-ninjacloud.conf
+    owner: root
+    group: root
+    mode: '0644'
+    validate: 'sshd -t -f %s'
+  notify: restart ssh
+
+- name: Ensure sshd is running and enabled
+  ansible.builtin.systemd:
+    name: ssh
+    enabled: true
+    state: started
