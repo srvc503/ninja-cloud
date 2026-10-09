@@ -30,20 +30,30 @@ observability, security и disaster recovery.
 
 ### Слои платформы
 
-- **Infrastructure:** Ubuntu Server + Ansible (IaC)
+- **Infrastructure:** Ubuntu Server + Ansible (IaC) ✅
+- **Security:** SSH hardening + UFW + Fail2ban ✅
+- **Container runtime:** Docker + Compose ✅
 - **Platform:** (планируется) Control Plane + API
 - **Observability:** (планируется) Prometheus + Grafana + Loki
 - **Backup:** (планируется) Restic + DR
 - **CI/CD:** (планируется) GitHub Actions
 
+### Ansible roles
+
+- `common` — базовые пакеты, timezone, unattended-upgrades, NOPASSWD sudo
+- `ufw` — фаервол, разрешён только SSH (22/tcp)
+- `fail2ban` — защита SSH от брутфорса
+- `ssh` — hardening (только ключ, root login запрещён)
+- `docker` — Docker + Compose (из репозитория Ubuntu)
+
 ## Статус
 
-**v0.1** — базовая структура проекта, baseline, LVM, SSH-ключи.
+**v0.2** — IaC + Security baseline + Docker.
 
 ## Roadmap
 
 - [x] v0.1 — Baseline + LVM + SSH + структура проекта
-- [ ] v0.2 — IaC + Security baseline + Docker
+- [x] v0.2 — IaC + Security baseline + Docker
 - [ ] v0.3 — First workload + metrics baseline
 - [ ] v0.4 — Observability
 - [ ] v0.5 — Backup + DR
@@ -64,4 +74,4 @@ observability, security и disaster recovery.
 ## Запуск
 
 ```bash
-ansible-playbook -i ansible/inventory/hosts.ini ansible/playbooks/site.yml
+ansible-playbook ansible/playbooks/site.yml
