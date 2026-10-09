@@ -1,0 +1,10 @@
+# NinjaCloud fail2ban configuration
+[DEFAULT]
+bantime = {{ fail2ban_bantime }}
+findtime = {{ fail2ban_findtime }}
+maxretry = {{ fail2ban_maxretry }}
+ignoreip = {{ fail2ban_ignoreips | join(' ') }}
+
+[sshd]
+enabled = true
+port = 22
